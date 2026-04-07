@@ -1,0 +1,31 @@
+﻿@model IEnumerable<BookStore.Models.Book>
+
+@{
+    ViewData["title"] = "Book Details";
+}
+
+<h2>@ViewData["title"]</h2>
+
+<table class="table">
+    <thead class="border-dark">
+        <tr>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>PublicationYear</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var book in Model)
+        {
+            <tr>
+                <td>@book.Name</td>
+                <td>@book.Author</td>
+                <td>@book.Price</td>
+                <td>@book.PublicationYear</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index" class="btn btn-secondary">Back to list</a>

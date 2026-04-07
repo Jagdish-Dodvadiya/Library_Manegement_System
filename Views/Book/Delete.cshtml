@@ -1,0 +1,14 @@
+﻿@model BookStore.Models.Book;
+
+@{
+    ViewData["title"] = "Delete Book";
+}
+
+<h2>@ViewData["title"]</h2>
+<h3>Are you Sure ?</h3>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</form>
